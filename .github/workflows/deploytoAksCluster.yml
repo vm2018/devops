@@ -11,7 +11,7 @@ jobs:
         username: ${{ secrets.acr_aks0001_username }}
         password: ${{ secrets.acr_aks0001_password }}
     
-    - name: Build and push image to ACR
+    - name: Build and push image to ACR 
       id: build-image
       run: |
         docker build "$GITHUB_WORKSPACE/" -f  "dockerfile" -t aks0001.azurecr.io/k8s0001:${{ github.sha }} --label dockerfile-path=dockerfile
